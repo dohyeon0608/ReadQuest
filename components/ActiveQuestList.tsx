@@ -1,6 +1,7 @@
+
 import React from "react";
-import {Quest, ReadingPlan, UserStats} from "@/types.ts";
-import {BASE_POINTS_PER_SECTION, BOOK_DATABASE, CONTENT_MULTIPLIERS} from "@/constants.ts";
+import {Quest, ReadingPlan, UserStats} from "../types";
+import {BASE_POINTS_PER_SECTION, BOOK_DATABASE, CONTENT_MULTIPLIERS} from "../constants";
 
 const ActiveQuestList: React.FC<{ readingPlans: Record<string, ReadingPlan>; userStats: UserStats; onConfirmQuest: (quest: Quest) => void;}> = ({ readingPlans, userStats, onConfirmQuest }) => {
     const activeBooks = BOOK_DATABASE.filter(book => readingPlans[book.title]);

@@ -216,10 +216,16 @@ export const LEVEL_TITLES: Record<number, string> = {
 };
 
 export const LEADERBOARD_DATA = [
-  { name: "책책책을읽읍시다", rp: 10500, level: 32 },
-  { name: "CAUCSE", rp: 9800, level: 30 },
-  { name: "나", rp: 0, level: 1, isCurrentUser: true }, // Placeholder for user
-  { name: "와샌즈", rp: 8500, level: 28 },
-  { name: "지나가는사람", rp: 7600, level: 25 },
-  { name: "아무개", rp: 6900, level: 22 },
+    { name: "책책책을읽읍시다", rp: 15200, level: 42, major: "문헌정보학과", isFriend: false },
+    { name: "CAUCSE", rp: 12500, level: 35, major: "소프트웨어학부", isFriend: true },
+    { name: "백트래킹", rp: 11000, level: 31, major: "소프트웨어학부", isFriend: false },
+    { name: "나", rp: 0, level: 1, major: "소프트웨어학부", isCurrentUser: true, isFriend: false },
+    { name: "와샌즈", rp: 9800, level: 28, major: "소프트웨어학부", isFriend: true },
+    { name: "교양인", rp: 8500, level: 25, major: "경영학과", isFriend: false },
+    { name: "지나가는사람", rp: 7200, level: 22, major: "기계공학과", isFriend: false },
+    { name: "정립반정립종합", rp: 6100, level: 20, major: "철학과", isFriend: true },
+    { name: "HelloWorld", rp: 2400, level: 8, major: "소프트웨어학부", isFriend: false },
+    { name: "미대떨어진사람", rp: 14500, level: 38, major: "역사학과", isFriend: false },
+    { name: "채찍피티", rp: 5500, level: 16, major: "AI학과", isFriend: false },
+    { name: "잼민이", rp: 300, level: 4, major: "AI학과", isFriend: true },
 ];

@@ -1,6 +1,7 @@
+
 import React, {useEffect, useState} from "react";
-import {Quest} from "@/types.ts";
-import {BookOpenIcon} from "@/components/icons.tsx";
+import {Quest} from "../types";
+import {BookOpenIcon} from "./icons";
 
 const FocusScreen: React.FC<{ quest: Quest; onFinish: () => void; }> = ({ quest, onFinish }) => {
     const [timeRemaining, setTimeRemaining] = useState(quest.goalMinutes * 60);

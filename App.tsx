@@ -1,10 +1,12 @@
+
 import React, { useState } from 'react';
-import { AppView, UserStats, Quest, QuizResult, ReadingPlan, JournalEntry } from './types.ts';
-import { LEVEL_TITLES, QUIZ_PASS_THRESHOLD } from './constants.ts';
-import MainDashboard from "@/components/MainDashboard.tsx";
-import FocusScreen from "@/components/FocusScreen.tsx";
-import QuizScreen from "@/components/QuizScreen.tsx";
-import ResultsScreen from "@/components/ResultsScreen.tsx";
+import { AppView, UserStats, Quest, QuizResult, ReadingPlan, JournalEntry } from './types';
+import { LEVEL_TITLES, QUIZ_PASS_THRESHOLD } from './constants';
+import MainDashboard from './components/MainDashboard';
+import FocusScreen from './components/FocusScreen';
+import QuizScreen from './components/QuizScreen';
+import ResultsScreen from './components/ResultsScreen';
+import AppBar from './components/AppBar';
 
 const isSameDay = (d1: Date, d2: Date) => {
     return d1.getFullYear() === d2.getFullYear() &&
@@ -160,22 +162,25 @@ const App: React.FC = () => {
         setView(AppView.DASHBOARD);
     };
 
-    switch (view) {
-        case AppView.FOCUS:
-            return <FocusScreen quest={currentQuest!} onFinish={handleProceedToQuiz} />;
-        case AppView.QUIZ:
-            return <QuizScreen quest={currentQuest!} onFinish={handleFinishQuiz} />;
-        case AppView.RESULTS:
-            return <ResultsScreen result={quizResult!} leveledUp={leveledUp} onContinue={handleReturnToDashboard} />;
-        case AppView.DASHBOARD:
-        default:
-            return <MainDashboard
-                userStats={userStats}
-                readingPlans={readingPlans}
-                handleStartQuest={handleStartQuest}
-                handleSetPlan={handleSetPlan}
-            />;
-    }
+    const showAppBar = view === AppView.DASHBOARD || view === AppView.RESULTS;
+
+    return (
+        <div className="min-h-screen bg-slate-900 text-white selection:bg-purple-500 selection:text-white">
+            {showAppBar && <AppBar userStats={userStats} />}
+            
+            {view === AppView.FOCUS && <FocusScreen quest={currentQuest!} onFinish={handleProceedToQuiz} />}
+            {view === AppView.QUIZ && <QuizScreen quest={currentQuest!} onFinish={handleFinishQuiz} />}
+            {view === AppView.RESULTS && <ResultsScreen result={quizResult!} leveledUp={leveledUp} onContinue={handleReturnToDashboard} />}
+            {view === AppView.DASHBOARD && (
+                <MainDashboard
+                    userStats={userStats}
+                    readingPlans={readingPlans}
+                    handleStartQuest={handleStartQuest}
+                    handleSetPlan={handleSetPlan}
+                />
+            )}
+        </div>
+    );
 };
 
 export default App;

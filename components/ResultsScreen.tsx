@@ -1,6 +1,7 @@
+
 import React from "react";
-import {QuizResult} from "@/types.ts";
-import {FireIcon} from "@/components/icons.tsx";
+import {QuizResult} from "../types";
+import {FireIcon} from "./icons";
 
 const ResultsScreen: React.FC<{ result: QuizResult; leveledUp: boolean; onContinue: () => void; }> = ({ result, leveledUp, onContinue }) => {
     const passed = result.earnedExp > 0 || result.totalQuestions === 0;
