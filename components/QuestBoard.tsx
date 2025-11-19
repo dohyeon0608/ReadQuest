@@ -1,8 +1,9 @@
-import {Book, ReadingPlan} from "@/types.ts";
+
+import {Book, ReadingPlan} from "../types";
 import React, {useState} from "react";
-import {BookOpenIcon} from "@/components/icons.tsx";
-import {BOOK_DATABASE} from "@/constants.ts";
-import PlanCreator from "@/components/PlanCreator.tsx";
+import {BookOpenIcon} from "./icons";
+import {BOOK_DATABASE} from "../constants";
+import PlanCreator from "./PlanCreator";
 
 interface QuestBoardProps {
     onSetPlan: (bookTitle: string, plan: ReadingPlan) => void;

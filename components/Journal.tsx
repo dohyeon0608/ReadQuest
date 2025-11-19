@@ -1,6 +1,7 @@
+
 import React from "react";
-import {JournalEntry} from "@/types.ts";
-import {ScrollIcon} from "@/components/icons.tsx";
+import {JournalEntry} from "../types";
+import {ScrollIcon} from "./icons";
 
 const Journal: React.FC<{ entries: JournalEntry[] }> = ({ entries }) => {
     if (entries.length === 0) {

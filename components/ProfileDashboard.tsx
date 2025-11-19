@@ -1,6 +1,7 @@
+
 import React from "react";
-import {UserStats} from "@/types.ts";
-import {FireIcon, ShieldCheckIcon} from "@/components/icons.tsx";
+import {UserStats} from "../types";
+import {FireIcon, ShieldCheckIcon} from "./icons";
 
 const ProfileDashboard: React.FC<{ stats: UserStats }> = ({ stats }) => {
     const expPercentage = (stats.exp / stats.expToNextLevel) * 100;

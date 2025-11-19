@@ -1,6 +1,7 @@
+
 import React, {useEffect, useState} from "react";
-import {Quest, QuizQuestion, QuizResult} from "@/types.ts";
-import {generateQuizFromTopics} from "@/services/geminiService.ts";
+import {Quest, QuizQuestion, QuizResult} from "../types";
+import {generateQuizFromTopics} from "../services/geminiService";
 
 const QuizScreen: React.FC<{ quest: Quest; onFinish: (result: Omit<QuizResult, 'earnedExp' | 'earnedRp' | 'bonusRp' | 'isStreakBonus'>) => void; }> = ({ quest, onFinish }) => {
     const [questions, setQuestions] = useState<QuizQuestion[]>([]);

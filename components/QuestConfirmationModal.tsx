@@ -1,5 +1,6 @@
+
 import React from "react";
-import {Quest} from "@/types.ts";
+import {Quest} from "../types";
 
 const QuestConfirmationModal: React.FC<{ quest: Quest; onConfirm: (quest: Quest) => void; onCancel: () => void; }> = ({ quest, onConfirm, onCancel }) => {
     return (

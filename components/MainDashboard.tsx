@@ -1,12 +1,13 @@
+
 import React, {useState} from "react";
-import {Quest, ReadingPlan, UserStats} from "@/types.ts";
-import QuestConfirmationModal from "@/components/QuestConfirmationModal.tsx";
-import QuestBoard from "@/components/QuestBoard.tsx";
-import ProfileDashboard from "@/components/ProfileDashboard.tsx";
-import {ScrollIcon, StarIcon, SwordIcon} from "@/components/icons.tsx";
-import ActiveQuestList from "@/components/ActiveQuestList.tsx";
-import Leaderboard from "@/components/Leaderboard.tsx";
-import Journal from "@/components/Journal.tsx";
+import {Quest, ReadingPlan, UserStats} from "../types";
+import QuestConfirmationModal from "./QuestConfirmationModal";
+import QuestBoard from "./QuestBoard";
+import ProfileDashboard from "./ProfileDashboard";
+import {ScrollIcon, StarIcon, SwordIcon} from "./icons";
+import ActiveQuestList from "./ActiveQuestList";
+import Leaderboard from "./Leaderboard";
+import Journal from "./Journal";
 
 interface MainDashboardProps {
     userStats: UserStats;
